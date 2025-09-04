@@ -1,0 +1,4 @@
+(streamlit-env) spandan@Spandan-Laptop:/mnt/c/Users/Spandan$ pip install streamlit
+(streamlit-env) spandan@Spandan-Laptop:/mnt/c/Users/Spandan$ pip install pypdf2
+(streamlit-env) spandan@Spandan-Laptop:/mnt/c/Users/Spandan$ pip install langchain
+(streamlit-env) spandan@Spandan-Laptop:/mnt/c/Users/Spandan$ pip install faiss-cpu
