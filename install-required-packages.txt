@@ -2,3 +2,15 @@
 (streamlit-env) spandan@Spandan-Laptop:/mnt/c/Users/Spandan$ pip install pypdf2
 (streamlit-env) spandan@Spandan-Laptop:/mnt/c/Users/Spandan$ pip install langchain
 (streamlit-env) spandan@Spandan-Laptop:/mnt/c/Users/Spandan$ pip install faiss-cpu
+(streamlit-env) spandan@Spandan-Laptop:/mnt/d/python_project_workspace/chatbot1$ pip install -U langchain-community
+(streamlit-env) spandan@Spandan-Laptop:/mnt/d/python_project_workspace/chatbot1$ pip install tiktoken
+
+
+so I am moving to another approach of Switch to a local embedding model (no API quota needed)
+For example, use HuggingFace sentence-transformers  instead of OpenAI embeddings:
+
+(streamlit-env) spandan@Spandan-Laptop:/mnt/d/python_project_workspace/chatbot1$ pip install -U sentence-transformers
+
+
+
+
