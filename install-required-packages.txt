@@ -11,6 +11,3 @@ For example, use HuggingFace sentence-transformers  instead of OpenAI embeddings
 
 (streamlit-env) spandan@Spandan-Laptop:/mnt/d/python_project_workspace/chatbot1$ pip install -U sentence-transformers
 
-
-
-

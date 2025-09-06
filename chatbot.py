@@ -4,11 +4,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
-#from langchain_community.chat_models import ChatOpenAI
-from langchain_community.llms import HuggingFaceHub
+from langchain_community.chat_models import ChatOpenAI
+# from langchain_community.llms import HuggingFaceHub
 
 
-HUGGING_FACE_API_KEY = "<Key>" #Huggingface-KEY
+#HUGGING_FACE_API_KEY = "<Key>" #Huggingface-KEY
+OPENAI_API_KEY = "<openaikey>"
 
 def read_pdf_text(file_path):
     with open(file_path, 'rb') as file:
@@ -62,15 +63,16 @@ if file is not None:
         match = vector_store.similarity_search(user_questions)
         #st.write(match)
         
-        #llm = ChatOpenAI(
-        #    openai_api_key = OPENAI_API_KEY,
-        #    temperature = 0,
-        #    max_tokens = 1000,
-        #    model_name = "gpt-3.5-turbo"
-        #)
-        
         #define the LLM
+        llm = ChatOpenAI(
+            openai_api_key = OPENAI_API_KEY,
+            temperature = 0,
+            max_tokens = 1000,
+            model_name = "gpt-3.5-turbo"
+        )
         
+        
+        '''
         # Requires you to set HUGGINGFACEHUB_API_TOKEN as env variable
         llm = HuggingFaceHub(
             repo_id="google/flan-t5-large",   # pick any open LLM
@@ -78,6 +80,7 @@ if file is not None:
             huggingfacehub_api_token = HUGGING_FACE_API_KEY,
             task="text2text-generation" 
         )
+        '''
         
         #chain -> take the question , get relavant document, pass it to the LLM, generate the output
         chain = load_qa_chain(llm, chain_type="stuff")
